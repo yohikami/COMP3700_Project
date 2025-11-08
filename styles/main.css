@@ -1,0 +1,165 @@
+/* ===== Global ===== */
+body {
+    font-family: 'Manrope', sans-serif;
+    color: #1e1e1e;
+    background-color: #f4f5f7;
+    margin: 0;
+    border: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 700;
+}
+
+.noto {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* ===== Navbar ===== */
+.custom-navbar {
+    background-color: #1e1e1e !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #fff !important;
+    text-transform: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #e05a47 !important;
+}
+
+.custom-navbar .nav-link {
+    color: #f0f0f0 !important;
+    transition: 0.3s;
+    font-weight: 500;
+    margin-left: 8px;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #e05a47 !important;
+}
+
+/* ===== Hero ===== */
+.hero {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+    margin-top: 0;
+    border: none;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.hero h1 {
+    color: #fff;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+.hero p {
+    color: #eaeaea;
+    font-weight: 400;
+}
+
+/* ===== Cards ===== */
+.tour-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.tour-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.tour-card img {
+    height: 220px;
+    object-fit: cover;
+}
+
+.btn-theme {
+    background-color: #c44536;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: 0.3s ease;
+    padding: 8px 18px;
+}
+
+.btn-theme:hover {
+    background-color: #9e3227;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ===== Footer ===== */
+.footer {
+    background-color: #1e1e1e;
+    /* same tone as navbar */
+    color: #ccc;
+    margin-top: 60px;
+    border-top: 1px solid #3b3b3b;
+    padding: 45px 0;
+}
+
+.footer h5 {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.footer p {
+    color: #c4c4c4;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer a {
+    color: #e05a47;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #ff6f5c;
+}
+
+.footer small {
+    color: #aaa;
+}
+
+/* ===== Utility ===== */
+::selection {
+    background-color: #e05a47;
+    color: #fff;
+}
