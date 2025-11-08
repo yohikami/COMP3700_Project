@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tours - MangaMaps</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            color: #1e1e1e;
+            background-color: #f4f5f7;
+            padding-top: 70px;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-weight: 700;
+        }
+
+        /* ===== Navbar ===== */
+        .custom-navbar {
+            background-color: #1e1e1e !important;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .navbar-brand {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            color: #fff !important;
+            text-transform: none;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #e05a47 !important;
+        }
+
+        .custom-navbar .nav-link {
+            color: #f0f0f0 !important;
+            transition: 0.3s;
+            font-weight: 500;
+            margin-left: 8px;
+        }
+
+        .custom-navbar .nav-link:hover {
+            color: #e05a47 !important;
+        }
+
+        .nav-link.active {
+            color: #e05a47 !important;
+            cursor: default;
+        }
+
+        .btn-theme {
+            background-color: #c44536;
+            border: none;
+            border-radius: 6px;
+            color: #fff;
+            font-weight: 600;
+            transition: 0.3s ease;
+            padding: 6px 18px;
+        }
+
+        .btn-theme:hover {
+            background-color: #9e3227;
+            transform: translateY(-1px);
+        }
+
+        /* ===== Tours ===== */
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            letter-spacing: 0.5px;
+            color: #1e1e1e;
+        }
+
+        .tours-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .tour-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            width: 330px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tour-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        .tour-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-body h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .card-body p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .price {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .btn-details {
+            background-color: #e05a47;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .btn-details:hover {
+            background-color: #c44536;
+            transform: translateY(-2px);
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background-color: #1e1e1e;
+            color: #ccc;
+            margin-top: 60px;
+            border-top: 1px solid #3b3b3b;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .footer h5 {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .footer p {
+            color: #c4c4c4;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #e05a47;
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #ff6f5c;
+        }
+    </style>
+</head>
+
+<body id="top">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">MangaMaps</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active disabled text-danger fw-semibold" href="#">Tours</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="review.html">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item mx-2"><span class="text-secondary">|</span></li>
+                    <li class="nav-item"><a class="btn btn-sm btn-theme fw-semibold" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h1 class="section-title mt-5">Discover Our Japanese Tours</h1>
+            <div class="tours-grid">
+
+                <!-- Tokyo -->
+                <div class="tour-card">
+                    <img src="assets/images/Tokyo (2).jpg" alt="Tokyo">
+                    <div class="card-body">
+                        <h4>Tokyo</h4>
+                        <p>Neon streets, luxury shopping, and timeless culture — Tokyo redefines modern Japan.</p>
+                        <p class="price">Starting from $99</p>
+                        <a href="tour-tokyo.html" class="btn-details">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Osaka -->
+                <div class="tour-card">
+                    <img src="assets/images/osaka (1).jpg" alt="Osaka">
+                    <div class="card-body">
+                        <h4>Osaka</h4>
+                        <p>From Dotonbori delights to Michelin dining — explore Japan’s flavorful heart.</p>
+                        <p class="price">Starting from $85</p>
+                        <a href="tour-osaka.html" class="btn-details">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Kyoto -->
+                <div class="tour-card">
+                    <img src="assets/images/kyoto.jpg" alt="Kyoto">
+                    <div class="card-body">
+                        <h4>Kyoto</h4>
+                        <p>Ancient temples, tea gardens, and bamboo trails — serenity preserved in time.</p>
+                        <p class="price">Starting from $89</p>
+                        <a href="tour-kyoto.html" class="btn-details">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Nara -->
+                <div class="tour-card">
+                    <img src="assets/images/Tokyo (2).jpg" alt="Nara">
+                    <div class="card-body">
+                        <h4>Nara</h4>
+                        <p>Ancient capital of Japan, home to peaceful deer and stunning temples.</p>
+                        <p class="price">Starting from $75</p>
+                        <a href="tour-nara.html" class="btn-details">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Sapporo -->
+                <div class="tour-card">
+                    <img src="assets/images/Tokyo (2).jpg" alt="Sapporo">
+                    <div class="card-body">
+                        <h4>Sapporo</h4>
+                        <p>Winter festivals, fresh seafood, and northern charm — explore Hokkaido’s capital.</p>
+                        <p class="price">Starting from $110</p>
+                        <a href="tour-sapporo.html" class="btn-details">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Fukuoka -->
+                <div class="tour-card">
+                    <img src="assets/images/Tokyo (2).jpg" alt="Fukuoka">
+                    <div class="card-body">
+                        <h4>Fukuoka</h4>
+                        <p>Street ramen, beaches, and city lights — Kyushu’s vibrant gateway.</p>
+                        <p class="price">Starting from $95</p>
+                        <a href="tour-fukuoka.html" class="btn-details">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Okinawa -->
+                <div class="tour-card">
+                    <img src="assets/images/Tokyo (2).jpg" alt="Okinawa">
+                    <div class="card-body">
+                        <h4>Okinawa</h4>
+                        <p>Tropical paradise with crystal-clear waters and coral reefs.</p>
+                        <p class="price">Starting from $130</p>
+                        <a href="tour-okinawa.html" class="btn-details">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Nagoya -->
+                <div class="tour-card">
+                    <img src="assets/images/Nagoya.jpg" alt="Nagoya">
+                    <div class="card-body">
+                        <h4>Nagoya</h4>
+                        <p>Japan’s industrial gem with castles, cuisine, and innovation.</p>
+                        <p class="price">Starting from $80</p>
+                        <a href="tour-nagoya.html" class="btn-details">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h5>MangaMaps</h5>
+            <p>© 2025 MangaMaps. All rights reserved.</p>
+            <a href="#top">Back to top ↑</a>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
