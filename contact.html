@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - MangaMaps</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <style>
+        .contact-hero { background: linear-gradient(135deg, #c44536 0%, #9e3227 100%); color: white; padding: 100px 0 60px; text-align: center; }
+        .contact-content { padding: 60px 0; }
+        .contact-form-section, .contact-info-section { background-color: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1); margin-bottom: 40px; }
+        .contact-form-section h2, .contact-info-section h2 { color: #c44536; margin-bottom: 30px; border-bottom: 3px solid #c44536; padding-bottom: 15px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { font-weight: 600; color: #1e1e1e; margin-bottom: 8px; display: block; }
+        .form-group input[type="text"], .form-group input[type="email"], .form-group input[type="tel"], .form-group input[type="date"], .form-group input[type="number"], .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 1rem; }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: #c44536; }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        .form-group input[type="checkbox"], .form-group input[type="radio"] { margin-right: 8px; width: auto; }
+        .checkbox-group, .radio-group { display: flex; flex-direction: column; gap: 10px; }
+        .checkbox-group label, .radio-group label { font-weight: 400; display: flex; align-items: center; }
+        .submit-btn { background-color: #c44536; color: white; padding: 12px 40px; border: none; border-radius: 6px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; width: 100%; }
+        .submit-btn:hover { background-color: #9e3227; transform: translateY(-2px); }
+        .info-card { background-color: #fff3f1; padding: 25px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #c44536; }
+        .info-card h4 { color: #c44536; margin-bottom: 15px; }
+        .info-card p { margin: 5px 0; color: #333; }
+        .info-card i { color: #c44536; margin-right: 10px; font-size: 1.2rem; }
+        .contact-table { width: 100%; border-collapse: collapse; margin: 30px 0; background-color: #fff; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); }
+        .contact-table th { background-color: #c44536; color: white; padding: 15px; text-align: left; font-weight: 600; }
+        .contact-table td { padding: 12px 15px; border-bottom: 1px solid #e0e0e0; }
+        .contact-table tr:hover { background-color: #f9f9f9; }
+        .form-row { display: flex; gap: 20px; }
+        .form-row .form-group { flex: 1; }
+        @media (max-width: 768px) { .form-row { flex-direction: column; } }
+    </style>
+</head>
+
+<body id="top">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="assets/images/logo.png" alt="MangaMaps Logo" height="30" style="margin-right: 10px;">
+                MangaMaps
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="review.html">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active disabled text-danger fw-semibold" href="#">Contact</a></li>
+                    <li class="nav-item mx-2"><span class="text-secondary">|</span></li>
+                    <li class="nav-item"><a class="btn btn-sm btn-theme px-3 py-1 fw-semibold" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1 class="fw-bold mb-3">Contact Us</h1>
+            <p class="lead noto">We're Here to Help You Plan Your Perfect Japanese Adventure</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-content">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Form -->
+                <div class="col-lg-8">
+                    <div class="contact-form-section">
+                        <h2 style="text-align: center;">Send Us a Message</h2>
+                        <p style="text-align: center; color: #666; margin-bottom: 30px;">Fill out the form below. Fields marked with <span style="color: #c44536;">*</span> are required.</p>
+                        <form action="https://httpbin.org/get" method="GET">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name <span style="color: #c44536;">*</span></label>
+                                    <input type="text" id="firstName" name="firstName" required placeholder="First name" style="width: 100%; padding: 12px;">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name <span style="color: #c44536;">*</span></label>
+                                    <input type="text" id="lastName" name="lastName" required placeholder="Last name" style="width: 100%; padding: 12px;">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email <span style="color: #c44536;">*</span></label>
+                                <input type="email" id="email" name="email" required placeholder="your.email@example.com" style="width: 100%; padding: 12px;">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" style="width: 100%; padding: 12px;">
+                            </div>
+                            <div class="form-group">
+                                <label for="inquiryType">Inquiry Type <span style="color: #c44536;">*</span></label>
+                                <select id="inquiryType" name="inquiryType" required style="width: 100%; padding: 12px;">
+                                    <option value="">-- Select --</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="booking">Booking</option>
+                                    <option value="tour">Tour Details</option>
+                                    <option value="custom">Custom Tour</option>
+                                    <option value="feedback">Feedback</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="preferredDate">Preferred Date</label>
+                                    <input type="date" id="preferredDate" name="preferredDate" style="width: 100%; padding: 12px;">
+                                </div>
+                                <div class="form-group">
+                                    <label for="travelers">Travelers</label>
+                                    <input type="number" id="travelers" name="travelers" min="1" max="50" value="1" style="width: 100%; padding: 12px;">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Contact Method <span style="color: #c44536;">*</span></label>
+                                <div class="radio-group">
+                                    <label><input type="radio" name="contactMethod" value="email" required checked> Email</label>
+                                    <label><input type="radio" name="contactMethod" value="phone" required> Phone</label>
+                                    <label><input type="radio" name="contactMethod" value="both" required> Both</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Interests</label>
+                                <div class="checkbox-group">
+                                    <label><input type="checkbox" name="interests" value="culture"> Cultural Tours</label>
+                                    <label><input type="checkbox" name="interests" value="food"> Food Tours</label>
+                                    <label><input type="checkbox" name="interests" value="adventure"> Adventure</label>
+                                    <label><input type="checkbox" name="interests" value="nature"> Nature</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message <span style="color: #c44536;">*</span></label>
+                                <textarea id="message" name="message" required rows="6" placeholder="Your message..." style="width: 100%; padding: 12px;"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="attachment">Attach File</label>
+                                <input type="file" id="attachment" name="attachment" accept=".pdf,.doc,.docx,.jpg,.png" style="width: 100%; padding: 12px;">
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">Budget (USD)</label>
+                                <input type="range" id="budget" name="budget" min="100" max="10000" value="1000" step="100" style="width: 100%;" oninput="document.getElementById('budgetValue').textContent = '$' + this.value">
+                                <p style="text-align: center; margin-top: 10px;"><strong>Selected: <span id="budgetValue" style="color: #c44536;">$1000</span></strong></p>
+                            </div>
+                            <div class="form-group">
+                                <label for="favoriteColor">Favorite Color</label>
+                                <input type="color" id="favoriteColor" name="favoriteColor" value="#c44536" style="width: 100%; height: 50px; padding: 5px; border-radius: 6px;">
+                            </div>
+                            <div class="form-group">
+                                <label for="website">Website</label>
+                                <input type="url" id="website" name="website" placeholder="https://example.com" style="width: 100%; padding: 12px;">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                            </div>
+                            <div class="form-group">
+                                <button type="reset" class="submit-btn" style="background-color: #666; margin-top: 10px;"><i class="fas fa-redo"></i> Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="col-lg-4">
+                    <div class="contact-info-section">
+                        <h2>Get In Touch</h2>
+                        <div class="info-card">
+                            <h4><i class="fas fa-envelope"></i> Email</h4>
+                            <p><a href="mailto:info@mangamaps.com?subject=Contact%20Inquiry" style="color: #c44536; text-decoration: none; font-weight: 600;">info@mangamaps.com</a></p>
+                            <p><a href="mailto:support@mangamaps.com" style="color: #c44536; text-decoration: none; font-weight: 600;">support@mangamaps.com</a></p>
+                        </div>
+                        <div class="info-card">
+                            <h4><i class="fas fa-phone"></i> Phone</h4>
+                            <p><strong>Main:</strong> +81-3-1234-5678</p>
+                            <p><strong>Support:</strong> +81-3-1234-5679</p>
+                        </div>
+                        <div class="info-card">
+                            <h4><i class="fas fa-map-marker-alt"></i> Address</h4>
+                            <p>123 Shibuya Crossing<br>Shibuya City, Tokyo 150-0002<br>Japan</p>
+                        </div>
+                        <h3 style="color: #c44536; margin-top: 30px; margin-bottom: 15px;">Office Hours</h3>
+                        <table class="contact-table">
+                            <thead>
+                                <tr><th>Day</th><th>Hours</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Monday - Friday</td><td>9:00 AM - 6:00 PM</td></tr>
+                                <tr><td>Saturday</td><td>10:00 AM - 4:00 PM</td></tr>
+                                <tr><td>Sunday</td><td>Closed</td></tr>
+                            </tbody>
+                        </table>
+                        <h3 style="color: #c44536; margin-top: 30px; margin-bottom: 15px;">Contact Methods</h3>
+                        <table class="contact-table">
+                            <thead>
+                                <tr><th>Method</th><th>Response Time</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><i class="fas fa-envelope" style="color: #c44536;"></i> Email</td><td>Within 24 hours</td></tr>
+                                <tr><td><i class="fas fa-phone" style="color: #c44536;"></i> Phone</td><td>Business hours</td></tr>
+                                <tr><td><i class="fas fa-comments" style="color: #c44536;"></i> Live Chat</td><td>Instant</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center py-4">
+        <div class="container">
+            <h5 class="fw-bold text-white mb-1">MangaMaps</h5>
+            <p class="text-light small mb-2">© 2025 MangaMaps. All rights reserved.</p>
+            <a href="#top" class="text-decoration-none small">Back to top ↑</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

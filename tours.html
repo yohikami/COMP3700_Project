@@ -6,12 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tours - MangaMaps</title>
 
-    <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;700&display=swap"
         rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <style>
@@ -19,7 +17,7 @@
             font-family: 'Manrope', sans-serif;
             color: #1e1e1e;
             background-color: #f4f5f7;
-            padding-top: 70px;
+            /* padding-top: 70px; <-- REMOVED */
             line-height: 1.6;
         }
 
@@ -83,16 +81,38 @@
             transform: translateY(-1px);
         }
 
-        /* ===== Tours ===== */
-
-        .section-title {
+        /* ===== NEW Tour Hero Section ===== */
+        .tours-hero-section {
+            background: linear-gradient(135deg, #c44536 0%, #9e3227 100%);
+            color: white;
+            padding: 100px 0 60px;
+            /* 100px top padding accounts for fixed navbar */
             text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 50px;
-            letter-spacing: 0.5px;
-            color: #1e1e1e;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
+
+        .tours-hero-title {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .tours-hero-subtitle {
+            font-size: 1.25rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        /* ===== Main Content Padding ===== */
+        .main-content {
+            padding: 60px 0;
+            /* Adds space between hero and cards */
+        }
+
+        /* .section-title (REMOVED - now part of hero) */
 
         .tours-grid {
             display: flex;
@@ -196,11 +216,17 @@
         .footer a:hover {
             color: #ff6f5c;
         }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 768px) {
+            .tours-hero-title {
+                font-size: 2.2rem;
+            }
+        }
     </style>
 </head>
 
 <body id="top">
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">MangaMaps</a>
@@ -224,13 +250,17 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
+    <section class="tours-hero-section">
+        <div class="container">
+            <h1 class="tours-hero-title">Discover Our Japanese Tours</h1>
+            <p class="tours-hero-subtitle">Find your next manga-inspired adventure.</p>
+        </div>
+    </section>
+
     <main class="main-content">
         <div class="container">
-            <h1 class="section-title mt-5">Discover Our Japanese Tours</h1>
             <div class="tours-grid">
 
-                <!-- Tokyo -->
                 <div class="tour-card">
                     <img src="assets/images/Tokyo (2).jpg" alt="Tokyo">
                     <div class="card-body">
@@ -241,7 +271,6 @@
                     </div>
                 </div>
 
-                <!-- Osaka -->
                 <div class="tour-card">
                     <img src="assets/images/osaka (1).jpg" alt="Osaka">
                     <div class="card-body">
@@ -252,7 +281,6 @@
                     </div>
                 </div>
 
-                <!-- Kyoto -->
                 <div class="tour-card">
                     <img src="assets/images/kyoto.jpg" alt="Kyoto">
                     <div class="card-body">
@@ -263,7 +291,6 @@
                     </div>
                 </div>
 
-                <!-- Nara -->
                 <div class="tour-card">
                     <img src="assets/images/Tokyo (2).jpg" alt="Nara">
                     <div class="card-body">
@@ -274,7 +301,6 @@
                     </div>
                 </div>
 
-                <!-- Sapporo -->
                 <div class="tour-card">
                     <img src="assets/images/Tokyo (2).jpg" alt="Sapporo">
                     <div class="card-body">
@@ -285,7 +311,6 @@
                     </div>
                 </div>
 
-                <!-- Fukuoka -->
                 <div class="tour-card">
                     <img src="assets/images/Tokyo (2).jpg" alt="Fukuoka">
                     <div class="card-body">
@@ -296,7 +321,6 @@
                     </div>
                 </div>
 
-                <!-- Okinawa -->
                 <div class="tour-card">
                     <img src="assets/images/Tokyo (2).jpg" alt="Okinawa">
                     <div class="card-body">
@@ -307,12 +331,11 @@
                     </div>
                 </div>
 
-                <!-- Nagoya -->
                 <div class="tour-card">
                     <img src="assets/images/Nagoya.jpg" alt="Nagoya">
                     <div class="card-body">
                         <h4>Nagoya</h4>
-                        <p>Japan’s industrial gem with castles, cuisine, and innovation.</p>
+                        <p>Japan's industrial gem with castles, cuisine, and innovation.</p>
                         <p class="price">Starting from $80</p>
                         <a href="tour-nagoya.html" class="btn-details">View Details</a>
                     </div>
@@ -321,7 +344,6 @@
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <h5>MangaMaps</h5>
@@ -329,8 +351,6 @@
             <a href="#top">Back to top ↑</a>
         </div>
     </footer>
-
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 </body>

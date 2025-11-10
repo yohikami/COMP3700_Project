@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - MangaMaps</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <style>
+        .login-hero {
+            background: linear-gradient(135deg, #c44536 0%, #9e3227 100%);
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+
+        .login-section {
+            padding: 60px 0;
+            min-height: 60vh;
+        }
+
+        .login-card {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .login-card h2 {
+            color: #c44536;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #1e1e1e;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #c44536;
+        }
+
+        .login-btn {
+            background-color: #c44536;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #9e3227;
+            transform: translateY(-2px);
+        }
+
+        .login-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .login-links a {
+            color: #c44536;
+            text-decoration: none;
+        }
+
+        .login-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body id="top">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="assets/images/logo.png" alt="MangaMaps Logo" height="30" style="margin-right: 10px;">
+                MangaMaps
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="review.html">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item mx-2"><span class="text-secondary">|</span></li>
+                    <li class="nav-item">
+                        <a class="btn btn-sm btn-theme px-3 py-1 fw-semibold active disabled" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="login-hero">
+        <div class="container">
+            <h1 class="fw-bold mb-3">Welcome Back</h1>
+            <p class="lead noto">Sign in to continue your journey</p>
+        </div>
+    </section>
+
+    <!-- Login Form -->
+    <section class="login-section">
+        <div class="container">
+            <div class="login-card">
+                <h2><i class="fas fa-user-circle"></i> Login</h2>
+                <form action="https://httpbin.org/get" method="GET">
+                    <div class="form-group">
+                        <label for="username">Username or Email <span style="color: #c44536;">*</span></label>
+                        <input type="text" id="username" name="username" required placeholder="Enter your username or email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password <span style="color: #c44536;">*</span></label>
+                        <input type="password" id="password" name="password" required placeholder="Enter your password">
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="remember" value="yes" style="width: auto; margin-right: 8px;">
+                            Remember me
+                        </label>
+                    </div>
+
+                    <button type="submit" class="login-btn">
+                        <i class="fas fa-sign-in-alt"></i> Sign In
+                    </button>
+                </form>
+
+                <div class="login-links">
+                    <p><a href="#">Forgot Password?</a></p>
+                    <p>Don't have an account? <a href="booking.html">Sign Up</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center py-4">
+        <div class="container">
+            <h5 class="fw-bold text-white mb-1">MangaMaps</h5>
+            <p class="text-light small mb-2">© 2025 MangaMaps. All rights reserved.</p>
+            <a href="#top" class="text-decoration-none small">Back to top ↑</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+

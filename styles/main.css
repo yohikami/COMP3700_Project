@@ -51,6 +51,13 @@ h5 {
     color: #e05a47 !important;
 }
 
+.nav-link.active {
+    color: #e05a47 !important;
+    font-weight: 600;
+    cursor: default;
+    pointer-events: none;
+    /* makes it unclickable */
+}
 /* ===== Hero ===== */
 .hero {
     position: relative;
@@ -128,7 +135,7 @@ h5 {
     color: #ccc;
     margin-top: 60px;
     border-top: 1px solid #3b3b3b;
-    padding: 45px 0;
+    padding: 10px 0;
 }
 
 .footer h5 {

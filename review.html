@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reviews - MangaMaps</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <style>
+        /* ===== Review Hero Section (STYLE MATCHED TO BOOKING & TOURS) ===== */
+        .review-hero {
+            background: linear-gradient(135deg, #c44536 0%, #9e3227 100%); 
+            color: white; 
+            padding: 100px 0 60px;
+            /* 100px top padding accounts for fixed navbar */
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-hero-title {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .review-hero-subtitle {
+            font-size: 1.25rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .review-section { padding: 60px 0; }
+        .review-card { background-color: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); margin-bottom: 30px; border-left: 5px solid #c44536; }
+        .review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .review-author { font-weight: 600; color: #1e1e1e; }
+        .review-date { color: #666; font-size: 0.9rem; }
+        .review-rating { color: #ffc107; margin: 10px 0; }
+        .review-form-section { background-color: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1); margin-top: 40px; }
+        .review-form-section h2 { color: #c44536; margin-bottom: 25px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { font-weight: 600; color: #1e1e1e; margin-bottom: 8px; display: block; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 1rem; }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: #c44536; }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        .submit-btn { background-color: #c44536; color: white; padding: 12px 40px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+        .submit-btn:hover { background-color: #9e3227; transform: translateY(-2px); }
+        .stats-table { width: 100%; border-collapse: collapse; margin: 30px 0; background-color: #fff; }
+        .stats-table th { background-color: #c44536; color: white; padding: 15px; text-align: left; }
+        .stats-table td { padding: 12px 15px; border-bottom: 1px solid #e0e0e0; }
+        .stats-table tr:hover { background-color: #f9f9f9; }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 768px) {
+            .review-hero-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="assets/images/logo.png" alt="MangaMaps Logo" height="30" style="margin-right: 10px;">
+                MangaMaps
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link active disabled text-danger fw-semibold" href="#">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item mx-2"><span class="text-secondary">|</span></li>
+                    <li class="nav-item"><a class="btn btn-sm btn-theme px-3 py-1 fw-semibold" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="review-hero">
+        <div class="container">
+            <h1 class="review-hero-title">Customer Reviews</h1>
+            <p class="review-hero-subtitle">See what our travelers are saying</p>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="review-section">
+        <div class="container">
+            <table class="stats-table">
+                <thead>
+                    <tr><th>Rating</th><th>Number of Reviews</th><th>Percentage</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>⭐⭐⭐⭐⭐ (5 Stars)</td><td>245</td><td>68%</td></tr>
+                    <tr><td>⭐⭐⭐⭐ (4 Stars)</td><td>89</td><td>25%</td></tr>
+                    <tr><td>⭐⭐⭐ (3 Stars)</td><td>18</td><td>5%</td></tr>
+                    <tr><td>⭐⭐ (2 Stars)</td><td>5</td><td>1%</td></tr>
+                    <tr><td>⭐ (1 Star)</td><td>3</td><td>1%</td></tr>
+                </tbody>
+            </table>
+
+            <h2 style="color: #c44536; margin: 40px 0 30px;">Recent Reviews</h2>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div><div class="review-author">Sarah Johnson</div><div class="review-date">January 15, 2025</div></div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <h4 style="color: #1e1e1e; margin-bottom: 10px;">Amazing Tokyo Experience!</h4>
+                <p>Our Tokyo City Lights tour was absolutely incredible! The guide was knowledgeable and friendly. We visited all the must-see places and discovered hidden gems we never would have found on our own. Highly recommend!</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div><div class="review-author">Michael Chen</div><div class="review-date">January 10, 2025</div></div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <h4 style="color: #1e1e1e; margin-bottom: 10px;">Osaka Food Tour Exceeded Expectations</h4>
+                <p>The Osaka Food Adventure was a culinary delight! We tried authentic street food, visited local markets, and even had a cooking class. The guide made sure we experienced the real Osaka food culture. Worth every yen!</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div><div class="review-author">Emma Williams</div><div class="review-date">January 5, 2025</div></div>
+                    <div class="review-rating">⭐⭐⭐⭐</div>
+                </div>
+                <h4 style="color: #1e1e1e; margin-bottom: 10px;">Beautiful Kyoto Heritage Tour</h4>
+                <p>Kyoto Heritage Escape was peaceful and beautiful. The temples and gardens were stunning. The only minor issue was the group size was a bit large, but the guide handled it well. Overall, a great experience!</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div><div class="review-author">David Brown</div><div class="review-date">December 28, 2024</div></div>
+                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <h4 style="color: #1e1e1e; margin-bottom: 10px;">Perfect First-Time Japan Experience</h4>
+                <p>As first-time visitors to Japan, we were nervous about language barriers and getting around. MangaMaps made everything so easy! The guides spoke excellent English and were patient with all our questions. We'll definitely book again!</p>
+            </div>
+
+            <!-- Review Form -->
+            <div class="review-form-section">
+                <h2>Share Your Experience</h2>
+                <p style="color: #666; margin-bottom: 25px;">Help other travelers by sharing your review</p>
+                <form action="https://httpbin.org/get" method="GET">
+                    <div class="form-group">
+                        <label for="reviewerName">Your Name <span style="color: #c44536;">*</span></label>
+                        <input type="text" id="reviewerName" name="reviewerName" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewEmail">Email Address <span style="color: #c44536;">*</span></label>
+                        <input type="email" id="reviewEmail" name="reviewEmail" required placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="tourSelect">Tour Reviewed</label>
+                        <select id="tourSelect" name="tourSelect">
+                            <option value="">Select a tour</option>
+                            <option value="tokyo">Tokyo City Lights</option>
+                            <option value="osaka">Osaka Food Adventure</option>
+                            <option value="kyoto">Kyoto Heritage Escape</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Rating <span style="color: #c44536;">*</span></label>
+                        <div>
+                            <label style="font-weight: 400; margin-right: 15px;"><input type="radio" name="rating" value="5" required style="width: auto; margin-right: 5px;">⭐⭐⭐⭐⭐</label>
+                            <label style="font-weight: 400; margin-right: 15px;"><input type="radio" name="rating" value="4" required style="width: auto; margin-right: 5px;">⭐⭐⭐⭐</label>
+                            <label style="font-weight: 400; margin-right: 15px;"><input type="radio" name="rating" value="3" required style="width: auto; margin-right: 5px;">⭐⭐⭐</label>
+                            <label style="font-weight: 400; margin-right: 15px;"><input type="radio" name="rating" value="2" required style="width: auto; margin-right: 5px;">⭐⭐</label>
+                            <label style="font-weight: 400;"><input type="radio" name="rating" value="1" required style="width: auto; margin-right: 5px;">⭐</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewTitle">Review Title</label>
+                        <input type="text" id="reviewTitle" name="reviewTitle" placeholder="Give your review a title">
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewText">Your Review <span style="color: #c44536;">*</span></label>
+                        <textarea id="reviewText" name="reviewText" required placeholder="Share your experience..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label><input type="checkbox" name="publish" value="yes" style="width: auto; margin-right: 8px;">I agree to publish this review publicly</label>
+                    </div>
+                    <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center py-4">
+        <div class="container">
+            <h5 class="fw-bold text-white mb-1">MangaMaps</h5>
+            <p class="text-light small mb-2">© 2025 MangaMaps. All rights reserved.</p>
+            <a href="#top" class="text-decoration-none small">Back to top ↑</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
