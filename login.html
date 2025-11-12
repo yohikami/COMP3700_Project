@@ -17,8 +17,24 @@
         .login-hero {
             background: linear-gradient(135deg, #c44536 0%, #9e3227 100%);
             color: white;
-            padding: 100px 0 60px;
+            padding: 140px 0 80px;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-hero-title {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-hero-subtitle {
+            font-size: 1.25rem;
+            font-weight: 400;
+            opacity: 0.9;
         }
 
         .login-section {
@@ -96,6 +112,16 @@
         .login-links a:hover {
             text-decoration: underline;
         }
+
+        @media (max-width: 768px) {
+            .login-hero-title {
+                font-size: 2.2rem;
+            }
+
+            .login-card {
+                padding: 30px 20px;
+            }
+        }
     </style>
 </head>
 
@@ -103,8 +129,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <img src="assets/images/logo.png" alt="MangaMaps Logo" height="30" style="margin-right: 10px;">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <img src="assets/images/logo.png" alt="MangaMaps Logo" height="38" width="38" class="me-3 rounded-circle logo-zoom">
                 MangaMaps
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
@@ -131,8 +157,8 @@
     <!-- Hero -->
     <section class="login-hero">
         <div class="container">
-            <h1 class="fw-bold mb-3">Welcome Back</h1>
-            <p class="lead noto">Sign in to continue your journey</p>
+            <h1 class="login-hero-title">Welcome Back</h1>
+            <p class="login-hero-subtitle">Sign in to continue your journey</p>
         </div>
     </section>
 

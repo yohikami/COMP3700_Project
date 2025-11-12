@@ -23,15 +23,13 @@
             color: #1e1e1e;
             background: linear-gradient(180deg, #f7f7f7 0%, #f0f2f4 100%);
             line-height: 1.6;
-            padding-top: 70px;
         }
 
         /* ===== Booking Hero Section (STYLE MATCHED TO REVIEW PAGE) ===== */
         .booking-hero-section {
             background: linear-gradient(135deg, #c44536 0%, #9e3227 100%);
             color: white;
-            padding: 100px 0 60px;
-            /* 100px top padding accounts for fixed navbar */
+            padding: 140px 0 80px;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
@@ -138,7 +136,10 @@
 <body id="top">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">MangaMaps</a>
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <img src="assets/images/logo.png" alt="MangaMaps Logo" height="38" width="38" class="me-3 rounded-circle logo-zoom">
+                MangaMaps
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -171,7 +172,7 @@
     <section class="booking-section">
         <div class="container">
             <div class="booking-card">
-                <form method="GET">
+                <form action="https://httpbin.org/get" method="GET">
                     <div class="mb-4">
                         <label for="fullName" class="form-label">Full Name</label>
                         <input type="text" class="form-control" id="fullName" name="fullName"
@@ -191,9 +192,6 @@
                             <option value="Tokyo">Tokyo</option>
                             <option value="Osaka">Osaka</option>
                             <option value="Kyoto">Kyoto</option>
-                            <option value="Nara">Nara</option>
-                            <option value="Sapporo">Sapporo</option>
-                            <option value="Okinawa">Okinawa</option>
                         </select>
                     </div>
 

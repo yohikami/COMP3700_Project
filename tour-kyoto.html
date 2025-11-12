@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kyoto Heritage Escape - MangaMaps</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <style>
+        body {
+            padding-top: 0;
+            background-color: #f4f5f7;
+        }
+
+        /* ===== Hero Banner Section ===== */
+        .tour-hero {
+            position: relative;
+            max-height: 500px;
+            height:500px;
+            overflow: hidden;
+            margin-top: 66px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .tour-hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tour-hero .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.7) 0%, rgba(224, 90, 71, 0.4) 100%);
+        }
+
+        .tour-hero-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 40px 0;
+            color: white;
+            z-index: 2;
+        }
+
+        .tour-title {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .tour-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            font-weight: 400;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== Main Content Section ===== */
+        .tour-content {
+            padding: 50px 0;
+            background-color: #f4f5f7;
+        }
+
+        .tour-description {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 40px;
+        }
+
+        /* ===== Itinerary Section ===== */
+        .itinerary-section {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        .section-heading {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e1e1e;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #e05a47;
+        }
+
+        .itinerary-day {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .itinerary-day:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .day-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #e05a47 0%, #c44536 100%);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-right: 15px;
+            vertical-align: top;
+        }
+
+        .day-content {
+            display: inline-block;
+            width: calc(100% - 60px);
+            vertical-align: top;
+        }
+
+        .day-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1e1e1e;
+            margin-bottom: 10px;
+        }
+
+        .day-highlights {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .day-highlights li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .day-highlights li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #e05a47;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* ===== Quick Info Card ===== */
+        .quick-info-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 100px;
+        }
+
+        .info-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .info-label {
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .info-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e1e1e;
+        }
+
+        .info-value.price {
+            color: #e05a47;
+            font-size: 2rem;
+        }
+
+        .rating-stars {
+            color: #ffc107;
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .rating-text {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .btn-book-tour {
+            background-color: #e05a47;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 14px 30px;
+            width: 100%;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-book-tour:hover {
+            background-color: #c44536;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(224, 90, 71, 0.3);
+        }
+
+        /* ===== Reviews Section ===== */
+        .reviews-section {
+            padding: 50px 0;
+            background-color: #ffffff;
+            margin-top: 40px;
+        }
+
+        .review-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            margin-bottom: 20px;
+            border-left: 4px solid #e05a47;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: #1e1e1e;
+            font-size: 1.1rem;
+        }
+
+        .review-rating {
+            color: #ffc107;
+            font-size: 1rem;
+        }
+
+        .review-text {
+            color: #555;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 768px) {
+            .tour-title {
+                font-size: 2.2rem;
+            }
+
+            .tour-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .tour-hero {
+                min-height: 450px;
+            }
+
+            .quick-info-card {
+                position: static;
+                margin-top: 30px;
+            }
+
+            .section-heading {
+                font-size: 1.6rem;
+            }
+
+            .day-content {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <img src="assets/images/logo.png" alt="MangaMaps Logo" height="38" width="38"
+                    class="me-3 rounded-circle logo-zoom">
+                MangaMaps
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="review.html">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+                    <li class="nav-item mx-2">
+                        <span class="text-secondary">|</span>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="btn btn-sm btn-theme px-3 py-1 fw-semibold" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="tour-hero">
+        <img src="assets/images/kyoto.jpg" alt="Kyoto Heritage Escape" class="tour-hero-image">
+        <div class="overlay"></div>
+        <div class="tour-hero-content">
+            <div class="container">
+                <h1 class="tour-title">Kyoto Heritage Escape</h1>
+                <p class="tour-subtitle">Ancient temples, tea gardens, and bamboo trails — serenity preserved in time
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="tour-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="tour-description">
+                        Step back in time and discover the ancient capital of Japan. Kyoto, with its over 2,000 temples
+                        and shrines, traditional wooden houses, and meticulously maintained gardens, offers a serene
+                        escape from the modern world. This carefully curated tour takes you through the most beautiful
+                        and historically significant sites, allowing you to experience the authentic Japanese culture,
+                        Zen philosophy, and the tranquil beauty that has inspired artists and poets for centuries.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <div class="itinerary-section">
+                        <h2 class="section-heading">Tour Itinerary</h2>
+
+                        <div class="itinerary-day">
+                            <span class="day-number">1</span>
+                            <div class="day-content">
+                                <h3 class="day-title">Temples & Traditional Districts</h3>
+                                <ul class="day-highlights">
+                                    <li>Welcome meeting with cultural guide</li>
+                                    <li>Visit Fushimi Inari Shrine - thousands of torii gates</li>
+                                    <li>Explore Gion district - Kyoto's geisha district</li>
+                                    <li>Traditional Japanese lunch at local restaurant</li>
+                                    <li>Visit Kiyomizu-dera Temple - wooden temple complex</li>
+                                    <li>Evening stroll through historic Higashiyama district</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="itinerary-day">
+                            <span class="day-number">2</span>
+                            <div class="day-content">
+                                <h3 class="day-title">Bamboo Grove & Zen Gardens</h3>
+                                <ul class="day-highlights">
+                                    <li>Morning visit to Arashiyama Bamboo Grove</li>
+                                    <li>Explore Tenryu-ji Temple and its Zen garden</li>
+                                    <li>Traditional tea ceremony experience</li>
+                                    <li>Visit Ryoan-ji Temple - famous rock garden</li>
+                                    <li>Lunch featuring Kyoto-style kaiseki cuisine</li>
+                                    <li>Explore Golden Pavilion (Kinkaku-ji)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="itinerary-day">
+                            <span class="day-number">3</span>
+                            <div class="day-content">
+                                <h3 class="day-title">Cultural Immersion & Gardens</h3>
+                                <ul class="day-highlights">
+                                    <li>Visit Nijo Castle - UNESCO World Heritage site</li>
+                                    <li>Explore traditional Japanese gardens</li>
+                                    <li>Experience traditional kimono wearing (optional)</li>
+                                    <li>Visit Silver Pavilion (Ginkaku-ji)</li>
+                                    <li>Traditional multi-course kaiseki dinner</li>
+                                    <li>Evening cultural performance (optional)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4">
+                    <div class="quick-info-card">
+                        <h3 class="section-heading" style="font-size: 1.5rem; margin-bottom: 25px;">Quick Info</h3>
+
+                        <div class="info-item">
+                            <div class="info-label">Duration</div>
+                            <div class="info-value">3 Days</div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">Price</div>
+                            <div class="info-value price">$89</div>
+                            <div style="color: #666; font-size: 0.9rem;">per person</div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">Group Size</div>
+                            <div class="info-value">8-12 people</div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">Rating</div>
+                            <div class="rating-stars">★★★★★</div>
+                            <div class="rating-text">4.7 out of 5 (312 reviews)</div>
+                        </div>
+
+                        <a href="booking.html" class="btn-book-tour">
+                            <i class="fas fa-calendar-check me-2"></i>Book This Tour
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews-section">
+        <div class="container">
+            <h2 class="section-heading text-center mb-5">Customer Reviews</h2>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-author">Lisa Anderson</div>
+                            <div class="review-rating">★★★★★</div>
+                        </div>
+                        <p class="review-text">
+                            "Kyoto Heritage Escape was peaceful and beautiful. The temples and gardens were stunning,
+                            and
+                            the tea ceremony was a highlight. The guide was very knowledgeable about Japanese history
+                            and
+                            culture. A truly serene experience!"
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-author">Robert Taylor</div>
+                            <div class="review-rating">★★★★★</div>
+                        </div>
+                        <p class="review-text">
+                            "This tour perfectly captured the essence of traditional Japan. The bamboo grove, Zen
+                            gardens, and temple visits were all incredible. The kaiseki meals were exquisite. Highly
+                            recommended for anyone interested in Japanese culture!"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-center py-4">
+        <div class="container">
+            <h5 class="fw-bold text-white mb-1">MangaMaps</h5>
+            <p class="text-light small mb-2">© 2025 MangaMaps. All rights reserved.</p>
+            <a href="#top" class="text-decoration-none small">Back to top ↑</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
