@@ -13,20 +13,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-    <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="styles/about.css" />
 </head>
 
 <body id="top">
-    <!-- Navbar1 -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
         <div class="container">
             <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-                <img src="assets/images/logo.png" alt="MangaMaps Logo" height="38" width="38" class="me-3 rounded-circle logo-zoom">
+                <img src="assets/images/logo.png" alt="MangaMaps Logo" height="38" width="38" class="me-3 rounded-circle">
                 MangaMaps
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -36,16 +34,17 @@
                     <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
                     <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
                     <li class="nav-item"><a class="nav-link" href="review.html">Reviews</a></li>
-                    <li class="nav-item"><a class="nav-link active disabled text-danger fw-semibold" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link active disabled fw-semibold" href="#" aria-current="page">About</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
 
                     <!-- Divider -->
-                    <li class="nav-item mx-2">
+                    <li class="nav-item mx-2 d-none d-lg-block">
                         <span class="text-secondary">|</span>
                     </li>
 
                     <li class="nav-item">
-                        <a class="btn btn-sm btn-theme px-3 py-1 fw-semibold" href="login.html">Login</a>
+                        <a class="btn btn-danger btn-sm px-3 py-1 fw-semibold" href="login.html">Login</a>
                     </li>
                 </ul>
             </div>
@@ -53,180 +52,228 @@
     </nav>
 
     <!-- Hero -->
-    <section class="about-hero">
+    <section class="bg-danger text-white text-center py-5 shadow" style="margin-top: 56px; padding: 140px 0 80px !important;">
         <div class="container">
-            <h1 class="about-hero-title">About MangaMaps</h1>
-            <p class="about-hero-subtitle">Discover Japan Through Authentic Experiences</p>
+            <h1 class="display-4 fw-bold mb-3" style="font-family: 'Noto Sans JP', sans-serif;">About MangaMaps</h1>
+            <p class="lead">Discover Japan Through Authentic Experiences</p>
         </div>
     </section>
 
     <!-- Content -->
-    <section class="about-content">
+    <section class="py-5">
         <div class="container">
-            <div class="about-section">
-                <h2 style="text-align: center;">Our Story</h2>
-                <div class="row">
+            <div class="mb-5">
+                <h2 class="text-center fw-bold mb-4 pb-3 border-bottom border-danger border-3">Our Story</h2>
+                <div class="row g-4">
                     <div class="col-md-6">
-                        <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
-                            Welcome to <strong style="color: #e05a47;">MangaMaps</strong>, your gateway to exploring
+                        <p class="fs-5 lh-lg text-muted">
+                            Welcome to <strong class="text-dark">MangaMaps</strong>, your gateway to exploring
                             Japan. Founded with a passion for Japanese culture and travel, we specialize in creating
                             unforgettable experiences that blend traditional heritage with modern adventures.
                         </p>
-                        <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+                        <p class="fs-5 lh-lg text-muted">
                             Our mission is to connect travelers with authentic Japanese experiences, from the bustling
                             streets of Tokyo to the serene temples of Kyoto. We believe that travel should be more than
                             just sightseeing—it should be a journey of discovery, learning, and connection.
                         </p>
                     </div>
                     <div class="col-md-6">
-                        <img src="https://cdn.technadu.com/wp-content/uploads/2021/09/3-gatsu-no-Lion.jpg" alt="Kyoto Temple" class="about-image">
+                        <img src="https://cdn.technadu.com/wp-content/uploads/2021/09/3-gatsu-no-Lion.jpg" alt="Kyoto Temple"
+                            class="img-fluid rounded shadow">
                     </div>
                 </div>
             </div>
 
-            <div class="about-section">
-                <div class="mission-box">
-                    <h3><i class="fas fa-bullseye" style="color: #e05a47; margin-right: 10px;"></i>Our Mission</h3>
-                    <p>
-                        To provide exceptional travel experiences that showcase the beauty, culture, and hospitality of
-                        Japan. We strive to make Japanese travel accessible, authentic, and memorable for travelers from
-                        around the world.
-                    </p>
-                </div>
-            </div>
-
-            <div class="about-section">
-                <h2 style="text-align: center;">Our Achievements</h2>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <span class="stat-number">10,000+</span>
-                        <span class="stat-label">Happy Travelers</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label">Tours Conducted</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">Expert Guides</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">15+</span>
-                        <span class="stat-label">Destinations</span>
+            <div class="mb-5">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title"><i class="fas fa-bullseye text-danger me-2"></i>Our Mission</h3>
+                        <p class="card-text">
+                            To provide exceptional travel experiences that showcase the beauty, culture, and hospitality of
+                            Japan. We strive to make Japanese travel accessible, authentic, and memorable for travelers from
+                            around the world.
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <div class="about-section">
-                <h2>Our Core Values</h2>
-                <div class="row">
+            <div class="mb-5">
+                <h2 class="text-center fw-bold mb-4 pb-3 border-bottom border-danger border-3">Our Achievements</h2>
+                <div class="row g-4">
+                    <div class="col-6 col-md-3">
+                        <div class="card text-center shadow-sm ">
+                            <div class="card-body">
+                                <div class="display-3 fw-bold text-danger mb-2">10,000+</div>
+                                <div class="text-muted fw-semibold">Happy Travelers</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card text-center shadow-sm ">
+                            <div class="card-body">
+                                <div class="display-3 fw-bold text-danger mb-2">500+</div>
+                                <div class="text-muted fw-semibold">Tours Conducted</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card text-center shadow-sm ">
+                            <div class="card-body">
+                                <div class="display-3 fw-bold text-danger mb-2">50+</div>
+                                <div class="text-muted fw-semibold">Expert Guides</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card text-center shadow-sm ">
+                            <div class="card-body">
+                                <div class="display-3 fw-bold text-danger mb-2">15+</div>
+                                <div class="text-muted fw-semibold">Destinations</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <h2 class="fw-bold mb-4 pb-3 border-bottom border-danger border-3">Our Core Values</h2>
+                <div class="row g-3">
                     <div class="col-md-6">
-                        <ul class="values-list">
-                            <li><strong>Authenticity:</strong> We provide genuine experiences that reflect true Japanese
-                                culture and traditions.</li>
-                            <li><strong>Excellence:</strong> We maintain the highest standards in all our tours and
-                                services.</li>
-                            <li><strong>Respect:</strong> We honor Japanese customs and promote cultural understanding.
+                        <ul class="list-unstyled">
+                            <li class="mb-3 p-3 bg-light rounded border-start ">
+                                <strong>Authenticity:</strong> We provide genuine experiences that reflect true Japanese
+                                culture and traditions.
+                            </li>
+                            <li class="mb-3 p-3 bg-light rounded border-start ">
+                                <strong>Excellence:</strong> We maintain the highest standards in all our tours and
+                                services.
+                            </li>
+                            <li class="mb-3 p-3 bg-light rounded border-start ">
+                                <strong>Respect:</strong> We honor Japanese customs and promote cultural understanding.
                             </li>
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <ul class="values-list">
-                            <li><strong>Innovation:</strong> We continuously improve our services with modern technology
-                                and creative approaches.</li>
-                            <li><strong>Sustainability:</strong> We promote responsible tourism that benefits local
-                                communities.</li>
-                            <li><strong>Customer Focus:</strong> Your satisfaction and memorable experiences are our top
-                                priority.</li>
+                        <ul class="list-unstyled">
+                            <li class="mb-3 p-3 bg-light rounded border-start ">
+                                <strong>Innovation:</strong> We continuously improve our services with modern technology
+                                and creative approaches.
+                            </li>
+                            <li class="mb-3 p-3 bg-light rounded border-start ">
+                                <strong>Sustainability:</strong> We promote responsible tourism that benefits local
+                                communities.
+                            </li>
+                            <li class="mb-3 p-3 bg-light rounded border-start ">
+                                <strong>Customer Focus:</strong> Your satisfaction and memorable experiences are our top
+                                priority.
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="about-section">
-                <h2>What We Offer</h2>
-                <div class="row">
+            <div class="mb-5">
+                <h2 class="fw-bold mb-4 pb-3 border-bottom border-danger border-3">What We Offer</h2>
+                <div class="row g-4">
                     <div class="col-md-4">
-                        <div class="info-card">
-                            <h4><i class="fas fa-map-marked-alt"></i> Guided Tours</h4>
-                            <p>Expert-led tours through Japan's most iconic destinations, including Tokyo, Kyoto, Osaka,
-                                and more.</p>
+                        <div class="card h-100 shadow-sm border-start ">
+                            <div class="card-body">
+                                <h4 class="card-title"><i class="fas fa-map-marked-alt text-danger me-2"></i>Guided Tours
+                                </h4>
+                                <p class="card-text">Expert-led tours through Japan's most iconic destinations, including
+                                    Tokyo, Kyoto, Osaka, and more.</p>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="info-card">
-                            <h4><i class="fas fa-utensils"></i> Culinary Experiences</h4>
-                            <p>Discover authentic Japanese cuisine through food tours, cooking classes, and restaurant
-                                visits.</p>
+                        <div class="card h-100 shadow-sm border-start ">
+                            <div class="card-body">
+                                <h4 class="card-title"><i class="fas fa-utensils text-danger me-2"></i>Culinary
+                                    Experiences</h4>
+                                <p class="card-text">Discover authentic Japanese cuisine through food tours, cooking
+                                    classes, and restaurant visits.</p>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="info-card">
-                            <h4><i class="fas fa-mountain"></i> Adventure Activities</h4>
-                            <p>From Mount Fuji hikes to traditional tea ceremonies, experience Japan's diverse
-                                activities.</p>
+                        <div class="card h-100 shadow-sm border-start ">
+                            <div class="card-body">
+                                <h4 class="card-title"><i class="fas fa-mountain text-danger me-2"></i>Adventure
+                                    Activities</h4>
+                                <p class="card-text">From Mount Fuji hikes to traditional tea ceremonies, experience
+                                    Japan's diverse activities.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="about-section">
-                <h2>Why Choose MangaMaps?</h2>
-                <div class="row">
+            <div class="mb-5">
+                <h2 class="fw-bold mb-4 pb-3 border-bottom border-danger border-3">Why Choose MangaMaps?</h2>
+                <div class="row g-4">
                     <div class="col-md-6">
-                        <img src="assets/images/japanStreet.jpg" alt="Tokyo City" class="about-image">
+                        <img src="assets/images/japanStreet.jpg" alt="Tokyo City" class="img-fluid rounded shadow">
                     </div>
                     <div class="col-md-6">
                         <h3>Your Trusted Travel Partner</h3>
-                        <p style="font-size: 1.05rem; line-height: 1.8; color: #555;">
+                        <p class="fs-5 lh-lg text-muted">
                             At MangaMaps, we understand that planning a trip to Japan can be overwhelming. That's why
                             we're here to make it easy, enjoyable, and unforgettable. Our team of experienced guides and
                             travel experts are passionate about Japan and dedicated to creating the perfect experience
                             for you.
                         </p>
-                        <p style="font-size: 1.05rem; line-height: 1.8; color: #555;">
+                        <p class="fs-5 lh-lg text-muted">
                             We offer flexible tour packages, personalized itineraries, and 24/7 support to ensure your
                             journey is smooth from start to finish. Whether you're a first-time visitor or a returning
                             traveler, we have something special for everyone.
                         </p>
-                        <a href="tours.html" class="btn btn-theme mt-3">Explore Our Tours</a>
+                        <a href="tours.html" class="btn btn-danger mt-3">Explore Our Tours</a>
                     </div>
                 </div>
             </div>
 
-            <div class="about-section">
-                <h2>Get In Touch</h2>
-                <p style="color: #555; margin-bottom: 25px;">We'd love to hear from you! Whether you have questions
-                    about our tours, need assistance with booking, or want to share your feedback, please don't hesitate
-                    to contact us.</p>
-                
-                <div class="row">
+            <div class="mb-5">
+                <h2 class="fw-bold mb-4 pb-3 border-bottom border-danger border-3">Get In Touch</h2>
+                <p class="text-muted mb-4">We'd love to hear from you! Whether you have questions about our tours, need
+                    assistance with booking, or want to share your feedback, please don't hesitate to contact us.</p>
+
+                <div class="row g-4">
                     <div class="col-md-6">
-                        <div class="info-card">
-                            <h4><i class="fas fa-envelope"></i> Email</h4>
-                            <p><a href="mailto:info@mangamaps.com">info@mangamaps.com</a></p>
-                            <p><a href="mailto:support@mangamaps.com">support@mangamaps.com</a></p>
+                        <div class="card shadow-sm border-start h-100 ">
+                            <div class="card-body">
+                                <h4 class="card-title"><i class="fas fa-envelope text-danger me-2"></i>Email</h4>
+                                <p class="card-text mb-1"><a href="mailto:info@mangamaps.com"
+                                        class="text-decoration-none">info@mangamaps.com</a></p>
+                                <p class="card-text mb-0"><a href="mailto:support@mangamaps.com"
+                                        class="text-decoration-none">support@mangamaps.com</a></p>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="info-card">
-                            <h4><i class="fas fa-phone"></i> Phone</h4>
-                            <p><strong>Main:</strong> +968 99999999</p>
-                            <p><strong>Support:</strong> +968 77777777</p>
+                        <div class="card shadow-sm border-start h-100 ">
+                            <div class="card-body">
+                                <h4 class="card-title"><i class="fas fa-phone text-danger me-2"></i>Phone</h4>
+                                <p class="card-text mb-1"><strong>Main:</strong> +968 99999999</p>
+                                <p class="card-text mb-0"><strong>Support:</strong> +968 77777777</p>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="info-card">
-                            <h4><i class="fas fa-map-marker-alt"></i> Address</h4>
-                            <p>123 Shibuya Crossing<br>Shibuya City, Tokyo 150-0002<br>Japan</p>
+                        <div class="card shadow-sm border-start h-100 ">
+                            <div class="card-body">
+                                <h4 class="card-title"><i class="fas fa-map-marker-alt text-danger me-2"></i>Address</h4>
+                                <p class="card-text mb-0">123 Shibuya Crossing<br>Shibuya City, Tokyo 150-0002<br>Japan</p>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="info-card">
-                            <h4><i class="fas fa-clock"></i> Office Hours</h4>
-                            <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
-                            <p><strong>Saturday:</strong> 10:00 AM - 4:00 PM</p>
-                            <p><strong>Sunday:</strong> Closed</p>
+                        <div class="card shadow-sm border-start h-100">
+                            <div class="card-body">
+                                <h4 class="card-title"><i class="fas fa-clock text-danger me-2"></i>Office Hours</h4>
+                                <p class="card-text mb-1"><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
+                                <p class="card-text mb-1"><strong>Saturday:</strong> 10:00 AM - 4:00 PM</p>
+                                <p class="card-text mb-0"><strong>Sunday:</strong> Closed</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -235,11 +282,11 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer text-center py-4">
+    <footer class="bg-dark text-white text-center py-4 mt-5">
         <div class="container">
-            <h5 class="fw-bold text-white mb-1">MangaMaps</h5>
+            <h5 class="fw-bold mb-1">MangaMaps</h5>
             <p class="text-light small mb-2">© 2025 MangaMaps. All rights reserved.</p>
-            <a href="#top" class="text-decoration-none small">Back to top ↑</a>
+            <a href="#top" class="text-decoration-none text-light small">Back to top ↑</a>
         </div>
     </footer>
 

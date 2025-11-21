@@ -13,29 +13,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles/main.css" />
 </head>
 
 <body id="top">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
         <div class="container">
             <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
                 <img src="assets/images/logo.png" alt="MangaMaps Logo" height="38" width="38"
-                    class="me-3 rounded-circle logo-zoom">
-                MangaMaps
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    class="me-3 rounded-circle"> MangaMaps</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+
             <div class="collapse navbar-collapse justify-content-end" id="mainNav">
                 <ul class="navbar-nav align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link active disabled text-danger fw-semibold" href="#">Home</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link active disabled fw-semibold" href="#"
+                            aria-current="page">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
                     <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
                     <li class="nav-item"><a class="nav-link" href="review.html">Reviews</a></li>
@@ -43,76 +39,122 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
 
                     <!-- Divider -->
-                    <li class="nav-item mx-2">
+                    <li class="nav-item mx-2 d-none d-lg-block">
                         <span class="text-secondary">|</span>
                     </li>
 
                     <li class="nav-item">
-                        <a class="btn btn-sm btn-theme px-3 py-1 fw-semibold" href="login.html">Login</a>
+                        <a class="btn btn-danger btn-sm px-3 py-1 fw-semibold" href="login.html">Login</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- Hero Carousel -->
+    <section class="position-relative text-white text-center" style="margin-top: 56px;">
 
+        <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-inner">
 
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="ratio ratio-21x9">
+                        <img src="assets/images/Fuji.jpg" class="img-fluid object-fit-cover" alt="Fuji">
+                    </div>
+                </div>
 
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="ratio ratio-21x9">
+                        <img src="assets/images/fish.jpg" class="img-fluid object-fit-cover" alt="Tokyo">
+                    </div>
+                </div>
 
-    <!-- Hero -->
-    <section class="hero text-center text-white">
-        <img src="assets/images/Fuji.jpg" alt="Hero Image" class="hero-image" />
-        <div class="overlay"></div>
-        <div class="container position-relative hero-content">
-            <h1 class="hero-title">Discover Japan with MangaMaps</h1>
-            <p class="hero-subtitle">たのしいりょこう <span>- A Journey Beyond Boundaries</span></p>
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="ratio ratio-21x9">
+                        <img src="assets/images/road.jpg" class="img-fluid object-fit-cover" alt="Kyoto">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
         </div>
+
+        <!-- Dark overlay -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark" style="opacity: 0.55;"></div>
+
+        <!-- Hero Text -->
+        <div class="position-absolute top-50 start-50 translate-middle container">
+            <h1 class="display-4 fw-bold" style="font-family: 'Noto Sans JP', sans-serif;">
+                Discover Japan with MangaMaps
+            </h1>
+            <p class="lead">たのしいりょこう <span>- A Journey Beyond Boundaries</span></p>
+        </div>
+
     </section>
 
     <!-- Packages -->
-    <section id="packages" class="packages text-center py-5">
+    <section id="packages" class="text-center py-5 bg-light">
         <div class="container">
-            <h2 class="fw-bold mb-5">Featured Tours</h2>
+            <h2 class="display-5 fw-bold mb-5">Featured Tours</h2>
+
             <div class="row g-4 justify-content-center">
 
                 <!-- Tokyo -->
-                <div class="col-10 col-sm-6 col-lg-4">
-                    <div class="card tour-card border-0 shadow-sm">
-                        <img src="assets/images/Tokyo (2).jpg" class="card-img-top" alt="Tokyo">
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="ratio ratio-16x9">
+                            <img src="assets/images/Tokyo (2).jpg" class="card-img-top object-fit-cover" alt="Tokyo">
+                        </div>
                         <div class="card-body">
-                            <h4 class="fw-semibold">Tokyo City Lights</h4>
-                            <p class="text-muted">Neon streets, luxury shopping, and timeless culture — Tokyo redefines
-                                modern Japan.</p>
-                            <p class="price mb-3 text-secondary fw-bold">Starting from $99</p>
-                            <a href="tour-tokyo.html" class="btn btn-theme">View Details</a>
+                            <h5 class="card-title">Tokyo City Lights</h5>
+                            <p class="card-text">
+                                Neon streets, luxury shopping, and timeless culture — Tokyo redefines modern Japan.
+                            </p>
+                            <a href="tour-tokyo.html" class="btn btn-outline-danger">View Details</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Osaka -->
-                <div class="col-10 col-sm-6 col-lg-4">
-                    <div class="card tour-card border-0 shadow-sm">
-                        <img src="assets/images/osaka (1).jpg" class="card-img-top" alt="Osaka">
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="ratio ratio-16x9">
+                            <img src="assets/images/osaka (1).jpg" class="card-img-top object-fit-cover" alt="Osaka">
+                        </div>
                         <div class="card-body">
-                            <h4 class="fw-semibold">Osaka Food Adventure</h4>
-                            <p class="text-muted">From Dotonbori delights to Michelin dining — explore Japan's flavorful
-                                heart.</p>
-                            <p class="price mb-3 text-secondary fw-bold">Starting from $50</p>
-                            <a href="tour-osaka.html" class="btn btn-theme">View Details</a>
+                            <h5 class="card-title">Osaka Food Adventure</h5>
+                            <p class="card-text">
+                                From Dotonbori delights to Michelin dining — explore Japan's flavorful heart.
+                            </p>
+                            <a href="tour-osaka.html" class="btn btn-outline-danger">View Details</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Kyoto -->
-                <div class="col-10 col-sm-6 col-lg-4">
-                    <div class="card tour-card border-0 shadow-sm">
-                        <img src="assets/images/kyoto.jpg" class="card-img-top" alt="Kyoto">
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="ratio ratio-16x9">
+                            <img src="assets/images/kyoto.jpg" class="card-img-top object-fit-cover" alt="Kyoto">
+                        </div>
                         <div class="card-body">
-                            <h4 class="fw-semibold">Kyoto Heritage Escape</h4>
-                            <p class="text-muted">Ancient temples, tea gardens, and bamboo trails — serenity preserved
-                                in time.</p>
-                            <p class="price mb-3 text-secondary fw-bold">Starting from $89</p>
-                            <a href="tour-kyoto.html" class="btn btn-theme">View Details</a>
+                            <h5 class="card-title">Kyoto Heritage Escape</h5>
+                            <p class="card-text">
+                                Ancient temples, tea gardens, and bamboo trails — serenity preserved in time.
+                            </p>
+                            <a href="tour-kyoto.html" class="btn btn-outline-danger">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -121,14 +163,17 @@
         </div>
     </section>
 
+
     <!-- Footer -->
-    <footer class="footer text-center py-4">
+    <footer class="bg-dark text-white text-center py-4 mt-5">
         <div class="container">
-            <h5 class="fw-bold text-white mb-1">MangaMaps</h5>
+            <h5 class="fw-bold mb-1">MangaMaps</h5>
             <p class="text-light small mb-2">© 2025 MangaMaps. All rights reserved.</p>
-            <a href="#top" class="text-decoration-none small">Back to top ↑</a>
+            <a href="#top" class="text-decoration-none text-light small">Back to top ↑</a>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
