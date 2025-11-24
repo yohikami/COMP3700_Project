@@ -36,6 +36,7 @@
                     <li class="nav-item"><a class="nav-link" href="calculator.html">Calculator</a></li>
                     <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
                     <li class="nav-item"><a class="nav-link" href="review.html">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="questionnaire.html">Questionnaire</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
 
@@ -163,6 +164,27 @@
             </div>
         </div>
     </section>
+
+    <!-- Scrolling Banner -->
+    <div class="bg-danger text-white py-2 mt-4">
+        <marquee behavior="scroll" direction="left" id="scrollText" class="fw-semibold">
+            Welcome to MangaMaps! Loading date & time...
+        </marquee>
+    </div>
+    
+    <script>
+        // Update scrolling text with live date + time
+        function updateBanner() {
+            const now = new Date();
+            const date = now.toLocaleDateString();
+            const time = now.toLocaleTimeString();
+            document.getElementById("scrollText").textContent =
+                "Welcome to MangaMaps! Today is " + date + " and the time is " + time;
+        }
+
+        setInterval(updateBanner, 1000);
+        updateBanner();
+    </script>
 
 
     <!-- Footer -->
