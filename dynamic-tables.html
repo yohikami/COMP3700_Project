@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Tables - MangaMaps</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        table td,
+        table th {
+            padding: 14px 16px !important;
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <!-- Hero -->
+    <section class="bg-danger text-white text-center py-5 shadow">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3" style="font-family: 'Noto Sans JP', sans-serif;">Dynamic Data Tables</h1>
+        </div>
+    </section>
+
+    <div class="container py-5">
+
+        <!-- TOURS TABLE -->
+        <h2 class="fw-bold mb-4 pb-3 border-bottom border-danger border-3">Tours Table</h2>
+        <table class="table table-hover table-bordered shadow-sm rounded-3 overflow-hidden" id="toursTable">
+            <thead class="bg-danger text-white">
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Duration</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <hr class="my-5">
+
+        <!-- REVIEWS TABLE -->
+        <h2 class="fw-bold mb-4 pb-3 border-bottom border-danger border-3">Reviews Table</h2>
+        <table class="table table-hover table-bordered shadow-sm rounded-3 overflow-hidden" id="reviewsTable">
+            <thead class="bg-danger text-white">
+                <tr>
+                    <th>Name</th>
+                    <th>Rating</th>
+                    <th>Comment</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <hr class="my-5">
+
+        <!-- Add New Tour -->
+        <h2 class="fw-bold mb-4 pb-3 border-bottom border-danger border-3">Add New Tour</h2>
+        <div class="card p-4 shadow-sm">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <input id="newName" class="form-control" placeholder="Tour Name">
+                </div>
+                <div class="col-md-4">
+                    <input id="newPrice" class="form-control" placeholder="Price">
+                </div>
+                <div class="col-md-4">
+                    <input id="newDuration" class="form-control" placeholder="Duration">
+                </div>
+            </div>
+
+            <button onclick="addTour()" class="btn btn-danger mt-4 btn-lg w-100">
+                Add Tour
+            </button>
+        </div>
+
+        <hr class="my-5">
+
+        <!-- Add New Review -->
+        <h2 class="fw-bold mb-4 pb-3 border-bottom border-danger border-3">Add New Review</h2>
+        <div class="card p-4 shadow-sm">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <input id="newNameR" class="form-control" placeholder="Name">
+                </div>
+                <div class="col-md-4">
+                    <input id="newRatingR" class="form-control" placeholder="Rating (1-5)">
+                </div>
+                <div class="col-md-4">
+                    <input id="newCommentR" class="form-control" placeholder="Comment">
+                </div>
+            </div>
+
+            <button onclick="addReview()" class="btn btn-danger mt-4 btn-lg w-100">
+                Add Review
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <h5 class="fw-bold mb-1">MangaMaps</h5>
+            <p class="text-light small mb-2">© 2025 MangaMaps. All rights reserved.</p>
+            <a href="#top" class="text-decoration-none text-light small">Back to top ↑</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="javascript/dynamic.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

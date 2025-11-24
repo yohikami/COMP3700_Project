@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tour Cost Calculator - MangaMaps</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body id="top" class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <img src="assets/images/logo.png" alt="MangaMaps Logo" height="38" width="38"
+                    class="me-3 rounded-circle">
+                MangaMaps
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+                    <li class="nav-item"><a class="nav-link active fw-semibold" href="calculator.html" aria-current="page">Calculator</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="review.html">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item mx-2 d-none d-lg-block">
+                        <span class="text-secondary">|</span>
+                    </li>
+                    <li class="nav-item"><a class="btn btn-danger btn-sm fw-semibold" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="bg-danger text-white text-center py-5 shadow"
+        style="margin-top: 56px; padding: 140px 0 80px !important;">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3" style="font-family: 'Noto Sans JP', sans-serif;">
+                Tour Cost Calculator
+            </h1>
+            <p class="lead mb-0">Estimate your Japan tour cost with tax and discounts</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-5">
+        <div class="container">
+            <div class="card shadow p-4 p-md-5">
+                <h3 class="fw-bold mb-4 pb-3 border-bottom border-danger border-3">
+                    Calculate Your Total
+                </h3>
+
+                <!-- Form Row -->
+                <div class="row g-4">
+                    <!-- Select Tour -->
+                    <div class="col-md-4">
+                        <label for="tourSelect" class="form-label fw-semibold">Select Tour</label>
+                        <select id="tourSelect" class="form-select">
+                            <option value="99">Tokyo City Lights – $99 per person</option>
+                            <option value="50">Osaka Food Adventure – $50 per person</option>
+                            <option value="89">Kyoto Heritage Escape – $89 per person</option>
+                        </select>
+                    </div>
+
+                    <!-- Number of People -->
+                    <div class="col-md-4">
+                        <label for="peopleInput" class="form-label fw-semibold">Number of People</label>
+                        <input type="number" id="peopleInput" class="form-control" min="1" max="6"
+                            placeholder="Enter number of travelers">
+                    </div>
+
+                    <!-- Discount Code -->
+                    <div class="col-md-4">
+                        <label class="form-label fw-semibold">Discount Code (optional)</label>
+                        <input type="text" id="discountCode" class="form-control" placeholder="Enter code if you have one">
+                    </div>
+
+
+                    <!-- Calculate Button -->
+                    <div class="col-md-4 d-flex align-items-end">
+                        <button onclick="calculateTotal()" class="btn btn-danger btn-lg w-100">
+                            Calculate Total
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Result Box -->
+                <div id="resultBox" class="alert alert-secondary mt-4" style="display: none;">
+                    <h5 class="fw-bold mb-2">Calculation Summary</h5>
+                    <p id="resultText" class="mb-0"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <h5 class="fw-bold mb-1">MangaMaps</h5>
+            <p class="text-light small mb-2">© 2025 MangaMaps. All rights reserved.</p>
+            <a href="#top" class="text-decoration-none text-light small">Back to top ↑</a>
+        </div>
+    </footer>
+
+    <script>
+        function calculateTotal() {
+            // 1. Read inputs from the form
+            let tourPrice = Number(document.getElementById("tourSelect").value);
+            let people = Number(document.getElementById("peopleInput").value);
+
+            // Simple validation: number of people must be >= 1
+            if (isNaN(people) || people <= 0 || people > 6) {
+                alert("Please enter a valid number of people (1-6).");
+                return;
+            }
+
+            // 2. Base price: price per person * number of people
+            let baseCost = tourPrice * people;
+
+            // 3. Discount rules:
+            let discount = 0;
+
+            // Rule A: Group discount (10% if people > 4)
+            if (people > 4) {
+                discount += baseCost * 0.10;
+            }
+
+            // Rule B: Winner discount (40% if code is correct)
+            let code = document.getElementById("discountCode").value.trim().toUpperCase();
+            if (code === "#MANGAWINNER") {
+                discount += baseCost * 0.40;
+            }
+
+
+            // 4. Tax is 5% of (base - discount)
+            let taxableAmount = baseCost - discount;
+            let tax = taxableAmount * 0.05;
+
+            // 5. Final total = base - discount + tax
+            let finalTotal = baseCost - discount + tax;
+
+            // 6. Build result message
+            let codeMessage = code === "#MANGAWINNER" ? "(Winner Code Applied: 40% Off)" : "(No Code or Wrong Code)";
+
+            let resultMessage = `
+                Base Cost: $${baseCost.toFixed(2)}<br>
+                Discount Total: -$${discount.toFixed(2)} <span class="text-muted">${codeMessage}</span><br>
+                Tax (5%): +$${tax.toFixed(2)}<br>
+                <hr>
+                <strong>Final Total: $${finalTotal.toFixed(2)}</strong>
+            `;
+
+
+            // 7. Show the result box and insert the message
+            document.getElementById("resultText").innerHTML = resultMessage;
+            document.getElementById("resultBox").style.display = "block";
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
