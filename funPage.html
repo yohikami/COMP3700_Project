@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Japan Landmarks Quiz - MangaMaps</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body id="top">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <img src="assets/images/logo.png" alt="MangaMaps Logo" height="38" width="38"
+                    class="me-3 rounded-circle"> MangaMaps</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calculator.html">Calculator</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="review.html">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="questionnaire.html">Questionnaire</a></li>
+                    <li class="nav-item"><a class="nav-link active disabled fw-semibold" href="funPage.html" aria-current="page">Quiz Game</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+                    <!-- Divider -->
+                    <li class="nav-item mx-2 d-none d-lg-block">
+                        <span class="text-secondary">|</span>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="btn btn-danger btn-sm px-3 py-1 fw-semibold" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-danger text-white text-center py-5 shadow" style="margin-top: 56px; padding: 140px 0 80px !important;">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3" style="font-family: 'Noto Sans JP', sans-serif;">Japan Landmarks Quiz Game</h1>
+            <p class="lead">Test your knowledge of famous Japanese landmarks!</p>
+        </div>
+    </section>
+
+    <!-- Instructions Section -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="alert alert-info mb-0" role="alert">
+                <h5 class="alert-heading">ℹ️ How to Play</h5>
+                <p class="mb-0">Look at each image and select the correct name of the famous Japanese landmark. Answer all 6 questions correctly to win a discount code!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Area -->
+    <main class="py-5">
+        <div class="container">
+            <!-- Dynamic game cards will be generated here by JavaScript -->
+            <div id="gameArea" class="row g-4 mb-4">
+                <!-- Cards will be inserted here dynamically -->
+            </div>
+
+            <!-- Check Answers Button -->
+            <div class="text-center mt-4">
+                <button id="checkAnswersBtn" class="btn btn-danger btn-lg px-5 py-3 fw-bold">
+                    Check Answers
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Result Modal -->
+    <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resultModalLabel">Quiz Results</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div id="modalContent">
+                        <!-- Content will be inserted dynamically -->
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <h5 class="fw-bold mb-1">MangaMaps</h5>
+            <p class="text-light small mb-2">© 2025 MangaMaps. All rights reserved.</p>
+            <a href="#top" class="text-decoration-none text-light small">Back to top ↑</a>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Game JavaScript -->
+    <script>
+        // Array with all the landmarks data
+        const landmarks = [
+            {
+                img: "assets/PuzzleImages/Mount-Fuji.jpg",
+                name: "Mount Fuji",
+                options: ["Mount Fuji", "Mount Aso", "Mount Tate"]
+            },
+            {
+                img: "assets/PuzzleImages/3915_02.jpg",
+                name: "Fushimi Inari Shrine",
+                options: ["Fushimi Inari Shrine", "Senso-ji Temple", "Kiyomizu-dera Temple"]
+            },
+            {
+                img: "assets/PuzzleImages/osaka-castle-park.jpg",
+                name: "Osaka Castle",
+                options: ["Osaka Castle", "Himeji Castle", "Nijo Castle"]
+            },
+            {
+                img: "assets/PuzzleImages/3009_01.jpg",
+                name: "Tokyo Tower",
+                options: ["Tokyo Tower", "Tokyo Skytree", "Kobe Port Tower"]
+            },
+            {
+                img: "assets/PuzzleImages/190614113003-19-shibuya-crossing-story-only.jpg",
+                name: "Shibuya Crossing",
+                options: ["Shibuya Crossing", "Akihabara Street", "Ginza Crossing"]
+            },
+            {
+                img: "assets/PuzzleImages/arayashima-iStock-1205306015-1024x680.jpg",
+                name: "Arashiyama Bamboo Forest",
+                options: ["Arashiyama Bamboo Forest", "Nara Park", "Kamakura Path"]
+            }
+        ];
+
+        // Function to shuffle the options array
+        function shuffleArray(arr) {
+            let newArr = [...arr];
+            for (let i = newArr.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                let temp = newArr[i];
+                newArr[i] = newArr[j];
+                newArr[j] = temp;
+            }
+            return newArr;
+        }
+
+        // Function to create a card for each landmark
+        function createCard(landmark, index) {
+            let shuffled = shuffleArray(landmark.options);
+            let options = '<option value="">-- Select Answer --</option>';
+            
+            for (let i = 0; i < shuffled.length; i++) {
+                options += '<option value="' + shuffled[i] + '">' + shuffled[i] + '</option>';
+            }
+            
+            return '<div class="col-12 col-md-6 col-lg-4">' +
+                '<div class="card h-100 shadow-sm">' +
+                '<div class="ratio ratio-16x9">' +
+                '<img src="' + landmark.img + '" class="card-img-top object-fit-cover" alt="' + landmark.name + '" onerror="this.src=\'assets/images/Fuji.jpg\'; this.alt=\'Landmark Image\'">' +
+                '</div>' +
+                '<div class="card-body d-flex flex-column">' +
+                '<h5 class="card-title fw-semibold mb-3">Question ' + (index + 1) + '</h5>' +
+                '<p class="card-text text-muted mb-3">What is the name of this famous Japanese landmark?</p>' +
+                '<select class="form-select mt-auto" id="answer' + index + '">' +
+                options +
+                '</select>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+        }
+
+        // Function to display all the cards
+        function showCards() {
+            let gameArea = document.getElementById('gameArea');
+            gameArea.innerHTML = '';
+            
+            for (let i = 0; i < landmarks.length; i++) {
+                gameArea.innerHTML += createCard(landmarks[i], i);
+            }
+        }
+
+        // Function to check answers when button is clicked
+        function checkAnswers() {
+            let correct = 0;
+            
+            for (let i = 0; i < landmarks.length; i++) {
+                let select = document.getElementById('answer' + i);
+                let userAnswer = select.value;
+                
+                // Remove old classes
+                select.classList.remove('is-valid', 'is-invalid');
+                
+                // Check if answer is correct
+                if (userAnswer === landmarks[i].name) {
+                    correct++;
+                    select.classList.add('is-valid');
+                } else if (userAnswer === '') {
+                    select.classList.add('is-invalid');
+                } else {
+                    select.classList.add('is-invalid');
+                }
+            }
+            
+            // Show result modal
+            let modal = new bootstrap.Modal(document.getElementById('resultModal'));
+            let modalContent = document.getElementById('modalContent');
+            let modalTitle = document.getElementById('resultModalLabel');
+            
+            modalContent.innerHTML = '';
+            
+            if (correct === landmarks.length) {
+                // All correct - show discount code
+                modalTitle.textContent = 'Congratulations! 🎉';
+                modalContent.innerHTML = '<div class="mb-3"><span style="font-size: 4rem;">🏆</span></div>' +
+                    '<h4 class="text-success mb-3">You got all ' + landmarks.length + ' questions correct!</h4>' +
+                    '<div class="alert alert-success">' +
+                    '<h5 class="alert-heading">You won a discount!</h5>' +
+                    '<p class="mb-0 fs-4 fw-bold">Code: <span class="text-danger">JAPAN2025</span></p>' +
+                    '</div>' +
+                    '<p class="text-muted">Use this code when booking your next tour!</p>';
+            } else {
+                // Not all correct
+                modalTitle.textContent = 'Try Again!';
+                modalContent.innerHTML = '<div class="mb-3"><span style="font-size: 4rem;">🔄</span></div>' +
+                    '<h4 class="text-danger mb-3">You got ' + correct + ' out of ' + landmarks.length + ' correct</h4>' +
+                    '<div class="alert alert-warning">' +
+                    '<p class="mb-0">You need to answer all questions correctly to win the discount code.</p>' +
+                    '</div>' +
+                    '<p class="text-muted">Review your answers and try again!</p>';
+            }
+            
+            modal.show();
+        }
+
+        // Start the game when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            showCards();
+            document.getElementById('checkAnswersBtn').addEventListener('click', checkAnswers);
+        });
+    </script>
+</body>
+
+</html>
+
