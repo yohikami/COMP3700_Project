@@ -19,7 +19,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
         <div class="container">
             <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-                <img src="assets/images/logo.png" alt="MangaMaps Logo" height="38" width="38" class="me-3 rounded-circle">
+                <img src="assets/images/logo.png" alt="MangaMaps Logo" height="38" width="38"
+                    class="me-3 rounded-circle">
                 MangaMaps
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
@@ -32,7 +33,8 @@
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
                     <li class="nav-item"><a class="nav-link" href="calculator.html">Calculator</a></li>
-                    <li class="nav-item"><a class="nav-link active disabled fw-semibold" href="#" aria-current="page">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link active disabled fw-semibold" href="#"
+                            aria-current="page">Booking</a></li>
                     <li class="nav-item"><a class="nav-link" href="review.html">Reviews</a></li>
                     <li class="nav-item"><a class="nav-link" href="questionnaire.html">Questionnaire</a></li>
                     <li class="nav-item"><a class="nav-link" href="funPage.html">Quiz Game</a></li>
@@ -47,9 +49,11 @@
         </div>
     </nav>
 
-    <section class="bg-danger text-white text-center py-5 shadow" style="margin-top: 56px; padding: 140px 0 80px !important;">
+    <section class="bg-danger text-white text-center py-5 shadow"
+        style="margin-top: 56px; padding: 140px 0 80px !important;">
         <div class="container">
-            <h1 class="display-4 fw-bold mb-3" style="font-family: 'Noto Sans JP', sans-serif;">Plan Your Next Adventure with MangaMaps</h1>
+            <h1 class="display-4 fw-bold mb-3" style="font-family: 'Noto Sans JP', sans-serif;">Plan Your Next Adventure
+                with MangaMaps</h1>
             <p class="lead">Seamlessly book your dream Japanese manga tour!</p>
         </div>
     </section>
@@ -63,37 +67,53 @@
                             <h2 class="card-title fw-bold text-center mb-4">Booking Form</h2>
                             <form action="https://httpbin.org/get" method="GET">
                                 <div class="mb-3">
-                                    <label for="fullName" class="form-label fw-semibold">Full Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control form-control-lg" id="fullName" name="fullName"
-                                        placeholder="Enter your full name" required>
+                                    <label for="fullName" class="form-label fw-semibold">Full Name <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control form-control-lg" id="fullName"
+                                        name="fullName" placeholder="Enter your full name" required>
+                                    <div class="invalid-feedback" style="display:none;">Please enter a valid name
+                                        (letters, spaces, and hyphens only).</div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="email" class="form-label fw-semibold">Email Address <span class="text-danger">*</span></label>
+                                    <label for="email" class="form-label fw-semibold">Email Address <span
+                                            class="text-danger">*</span></label>
                                     <input type="email" class="form-control form-control-lg" id="email" name="email"
                                         placeholder="your.email@example.com" required>
+                                    <div class="invalid-feedback" style="display:none;">Please enter a valid email
+                                        address.</div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="destination" class="form-label fw-semibold">Tour Destination <span class="text-danger">*</span></label>
-                                    <select class="form-select form-select-lg" id="destination" name="destination" required>
+                                    <label for="destination" class="form-label fw-semibold">Tour Destination <span
+                                            class="text-danger">*</span></label>
+                                    <select class="form-select form-select-lg" id="destination" name="destination"
+                                        required>
                                         <option value="">Select a destination</option>
                                         <option value="Tokyo">Tokyo</option>
                                         <option value="Osaka">Osaka</option>
                                         <option value="Kyoto">Kyoto</option>
                                     </select>
+                                    <div class="invalid-feedback" style="display:none;">Please select a destination.
+                                    </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="travelers" class="form-label fw-semibold">Number of Travelers <span class="text-danger">*</span></label>
-                                    <input type="number" class="form-control form-control-lg" id="travelers" name="travelers"
-                                        placeholder="1" min="1" max="6" required>
+                                    <label for="travelers" class="form-label fw-semibold">Number of Travelers <span
+                                            class="text-danger">*</span></label>
+                                    <input type="number" class="form-control form-control-lg" id="travelers"
+                                        name="travelers" placeholder="1" required>
+                                    <div class="invalid-feedback" style="display:none;">Please enter a valid number of
+                                        travelers (1-6).</div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="travelDate" class="form-label fw-semibold">Travel Date <span class="text-danger">*</span></label>
-                                    <input type="date" class="form-control form-control-lg" id="travelDate" name="travelDate"
-                                        required>
+                                    <label for="travelDate" class="form-label fw-semibold">Travel Date <span
+                                            class="text-danger">*</span></label>
+                                    <input type="date" class="form-control form-control-lg" id="travelDate"
+                                        name="travelDate" required>
+                                    <div class="invalid-feedback" style="display:none;">Please select a valid travel
+                                        date.</div>
                                 </div>
 
                                 <div class="mb-4">
@@ -124,6 +144,76 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+            // 1. SELECT ELEMENTS
+            let name = document.getElementById('fullName');
+            let email = document.getElementById('email');
+            let destination = document.getElementById('destination');
+            let travelers = document.getElementById('travelers');
+            let dateInput = document.getElementById('travelDate'); // Added Date
+
+            // 2. DEFINE PATTERNS
+            const namePattern = /^[a-zA-Z\s-]+$/;
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            // 3. RESET ERRORS
+            function clearError(input) {
+                input.classList.remove('is-invalid');
+                // Check if the error div exists before trying to hide it
+                if(input.nextElementSibling) {
+                    input.nextElementSibling.style.display = 'none';
+                    }
+            }
+
+            clearError(name);
+            clearError(email);
+            clearError(destination);
+            clearError(travelers);
+            clearError(dateInput);
+
+            // 4. VALIDATE NAME
+            if(!namePattern.test(name.value) || name.value.trim() === '') {
+                e.preventDefault();
+                name.classList.add('is-invalid');
+                if(name.nextElementSibling) name.nextElementSibling.style.display = 'block';
+                name.focus();
+            }
+
+            // 5. VALIDATE EMAIL
+            if(!emailPattern.test(email.value) || email.value.trim() === '') {
+                e.preventDefault();
+                email.classList.add('is-invalid');
+                if(email.nextElementSibling) email.nextElementSibling.style.display = 'block';
+            }
+
+            // 6. VALIDATE DESTINATION
+            if(destination.value === "") {
+                e.preventDefault();
+                destination.classList.add('is-invalid');
+                if(destination.nextElementSibling) destination.nextElementSibling.style.display = 'block';
+            }
+
+            // 7. VALIDATE TRAVELERS 
+            let tCount = parseInt(travelers.value);
+            if(isNaN(tCount) || tCount < 1 || tCount> 6) {
+                e.preventDefault();
+                travelers.classList.add('is-invalid');
+                if(travelers.nextElementSibling) travelers.nextElementSibling.style.display = 'block';
+                }
+
+                // 8. VALIDATE DATE 
+                let selectedDate = new Date(dateInput.value);
+                let today = new Date();
+                today.setHours(0,0,0,0); // Ignore time
+
+                if(dateInput.value === "" || selectedDate < today) { 
+                    e.preventDefault(); dateInput.classList.add('is-invalid');
+                    if(dateInput.nextElementSibling) dateInput.nextElementSibling.style.display = 'block';
+                    dateInput.focus();
+                    }
+                });
+    </script>
 </body>
 
 </html>
