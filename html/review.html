@@ -143,19 +143,20 @@
                 <div class="card-body p-4">
                     <h2 class="card-title fw-bold mb-3 pb-3 border-bottom border-danger border-3">Share Your Experience</h2>
                     <p class="text-muted mb-4">Help other travelers by sharing your review</p>
-                    <form action="https://httpbin.org/get" method="GET">
+                    <form action="../php/process_review.php" method="POST">
+                    
                         <div class="mb-3">
                             <label for="reviewerName" class="form-label fw-semibold">Your Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="reviewerName" name="reviewerName" required
+                            <input type="text" class="form-control" id="reviewerName" name="fullName" required
                                 placeholder="Enter your name">
                         </div>
-
+                    
                         <div class="mb-3">
                             <label for="reviewEmail" class="form-label fw-semibold">Email Address <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control" id="reviewEmail" name="reviewEmail" required
+                            <input type="email" class="form-control" id="reviewEmail" name="email" required
                                 placeholder="your.email@example.com">
                         </div>
-
+                    
                         <div class="mb-3">
                             <label for="tourSelect" class="form-label fw-semibold">Tour Reviewed</label>
                             <select class="form-select" id="tourSelect" name="tourSelect">
@@ -166,7 +167,7 @@
                                 <option value="other">Other</option>
                             </select>
                         </div>
-
+                    
                         <div class="mb-3">
                             <label for="rating" class="form-label fw-semibold">Rating <span class="text-danger">*</span></label>
                             <select class="form-select" id="rating" name="rating" required>
@@ -178,19 +179,19 @@
                                 <option value="1">★ (1 Star)</option>
                             </select>
                         </div>
-
+                    
                         <div class="mb-3">
                             <label for="reviewTitle" class="form-label fw-semibold">Review Title</label>
                             <input type="text" class="form-control" id="reviewTitle" name="reviewTitle"
                                 placeholder="Give your review a title">
                         </div>
-
+                    
                         <div class="mb-3">
                             <label for="reviewText" class="form-label fw-semibold">Your Review <span class="text-danger">*</span></label>
-                            <textarea class="form-control" id="reviewText" name="reviewText" required rows="6"
+                            <textarea class="form-control" id="reviewText" name="comment" required rows="6"
                                 placeholder="Share your experience..."></textarea>
                         </div>
-
+                    
                         <div class="d-grid">
                             <button type="submit" class="btn btn-danger btn-lg">
                                 <i class="fas fa-paper-plane me-2"></i>Submit Review
