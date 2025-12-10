@@ -71,6 +71,7 @@ $result = $conn->query($sql);
                             <td>$<?php echo $row['price']; ?></td>
                             <td><?php echo $row['duration']; ?></td>
                             <td>
+                                <a href="edit_tour.php?id=<?php echo $row['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
                                 <a href="delete_tour.php?id=<?php echo $row['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>
