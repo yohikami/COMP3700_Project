@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
         <div class="container">
             <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-                <img src="assets/images/logo.png" alt="MangaMaps Logo" height="38" width="38"
+                <img src="../assets/images/logo.png" alt="MangaMaps Logo" height="38" width="38"
                     class="me-3 rounded-circle"> MangaMaps</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
                 aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -122,32 +122,32 @@
         // Array with all the landmarks data
         const landmarks = [
             {
-                img: "assets/PuzzleImages/Mount-Fuji.jpg",
+                img: "../assets/PuzzleImages/Mount-Fuji.jpg",
                 name: "Mount Fuji",
                 options: ["Mount Fuji", "Mount Aso", "Mount Tate"]
             },
             {
-                img: "assets/PuzzleImages/3915_02.jpg",
+                img: "../assets/PuzzleImages/3915_02.jpg",
                 name: "Fushimi Inari Shrine",
                 options: ["Fushimi Inari Shrine", "Senso-ji Temple", "Kiyomizu-dera Temple"]
             },
             {
-                img: "assets/PuzzleImages/osaka-castle-park.jpg",
+                img: "../assets/PuzzleImages/osaka-castle-park.jpg",
                 name: "Osaka Castle",
                 options: ["Osaka Castle", "Himeji Castle", "Nijo Castle"]
             },
             {
-                img: "assets/PuzzleImages/3009_01.jpg",
+                img: "../assets/PuzzleImages/3009_01.jpg",
                 name: "Tokyo Tower",
                 options: ["Tokyo Tower", "Tokyo Skytree", "Kobe Port Tower"]
             },
             {
-                img: "assets/PuzzleImages/190614113003-19-shibuya-crossing-story-only.jpg",
+                img: "../assets/PuzzleImages/190614113003-19-shibuya-crossing-story-only.jpg",
                 name: "Shibuya Crossing",
                 options: ["Shibuya Crossing", "Akihabara Street", "Ginza Crossing"]
             },
             {
-                img: "assets/PuzzleImages/arayashima-iStock-1205306015-1024x680.jpg",
+                img: "../assets/PuzzleImages/arayashima-iStock-1205306015-1024x680.jpg",
                 name: "Arashiyama Bamboo Forest",
                 options: ["Arashiyama Bamboo Forest", "Nara Park", "Kamakura Path"]
             }
@@ -177,7 +177,7 @@
             return '<div class="col-12 col-md-6 col-lg-4">' +
                 '<div class="card h-100 shadow-sm">' +
                 '<div class="ratio ratio-16x9">' +
-                '<img src="' + landmark.img + '" class="card-img-top object-fit-cover" alt="' + landmark.name + '" onerror="this.src=\'assets/images/Fuji.jpg\'; this.alt=\'Landmark Image\'">' +
+                '<img src="' + landmark.img + '" class="card-img-top object-fit-cover" alt="' + landmark.name + '" onerror="this.src=\'../assets/images/Fuji.jpg\'; this.alt=\'Landmark Image\'">' +
                 '</div>' +
                 '<div class="card-body d-flex flex-column">' +
                 '<h5 class="card-title fw-semibold mb-3">Question ' + (index + 1) + '</h5>' +
