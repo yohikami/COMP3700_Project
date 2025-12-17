@@ -41,7 +41,7 @@ $result = $conn->query($sql);
 <body id="top">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
         <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="../index.html">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
                 <img src="../assets/images/logo.png" alt="MangaMaps Logo" height="38" width="38" class="me-3 rounded-circle">
                 MangaMaps
             </a>
@@ -59,14 +59,18 @@ $result = $conn->query($sql);
                     <li class="nav-item"><a class="nav-link" href="../html/review.html">Reviews</a></li>
                     <li class="nav-item"><a class="nav-link" href="../html/questionnaire.html">Questionnaire</a></li>
                     <li class="nav-item"><a class="nav-link" href="../html/funPage.html">Quiz Game</a></li>
-                    <li class="nav-item"><a class="nav-link active fw-bold text-danger" href="manage_tours.php">Manage</a></li>
+                    <li class="nav-item"><a class="nav-link " href="../html/about.html" aria-current="page">About</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../html/contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active disabled fw-semibold" href="../php/manage_tours.php">Manage</a></li>
 
+                    <!-- Divider -->
                     <li class="nav-item mx-2 d-none d-lg-block">
                         <span class="text-secondary">|</span>
                     </li>
 
                     <li class="nav-item">
-                        <a class="btn btn-danger btn-sm px-3 py-1 fw-semibold" href="../login.html">Login</a>
+                        <a class="btn btn-danger btn-sm px-3 py-1 fw-semibold" href="login.html">Login</a>
                     </li>
                 </ul>
             </div>
